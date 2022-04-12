@@ -47,19 +47,13 @@ html(lang="en")
 
 		.loader: .loader--spinner
 		.page
-			header.header
-				.header--logo #{name}#[span #{position} @ #[a(href=company.link)= company.name]]
+				.bio #{name}#[span #{position} @ #[a(href=company.link)= company.name]]
 
-				.header--btns: +btn-group ([{url: 'https://github.com/' + contacts.github, caption: 'github'}, {url: 'https://t.me/' + contacts.telegram, caption: 'telegram'}])
-				.header--btns: a(href='mailto:' + contacts.mail).btn= contacts.mail
-
-			.tiles
-				+tile (projects, '02', 'View projects')
-				+tile (resume, '01', 'View resume').is-resume(target="_blank" rel="noopener noreferrer")
-
-			.photos
-				+photo ('01', 'Via Dogana', 'Milan')
-				+photo ('02', 'Campo San Rocco', 'Venice')
+				+btn-group ([
+          {url: 'https://github.com/' + contacts.github, caption: 'github'},
+          {url: 'https://t.me/' + contacts.telegram, caption: 'telegram'},
+          {url: 'mailto:' + contacts.mail, caption: contacts.mail}
+        ])
 
 		script.
 			function fadeOut(el) {

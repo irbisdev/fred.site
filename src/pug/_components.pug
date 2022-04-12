@@ -39,15 +39,4 @@ mixin head (pageTitle)
 mixin btn-group (items)
 	.btn-group
 		each item in items
-			a(href=item.url target="_blank" rel="noopener noreferrer")= item.caption
-
-mixin photo (photoID, street, city)
-	.photo(style='background-image: url(/src/assets/photo-' + photoID + '.jpg)')&attributes(attributes)
-		+copyrights (street, city)
-
-mixin copyrights (street, city)
-	.copyrights&attributes(attributes) #[span #{street}]#[br]#{city}, Italy
-
-mixin tile (link, photoID, caption)
-	a(href=link style='background-image: url(/src/assets/tile-' + photoID + '.jpg)').tile&attributes(attributes)
-		span= caption
+			a(href=item.url target="_blank" rel="noopener noreferrer").btn= item.caption
