@@ -51,7 +51,7 @@ html(lang="en")
 				.header--logo #{name}#[span #{position} @ #[a(href=company.link)= company.name]]
 
 				.header--btns: +btn-group ([{url: 'https://github.com/' + contacts.github, caption: 'github'}, {url: 'https://t.me/' + contacts.telegram, caption: 'telegram'}])
-				.header--btns: a(href='mailto:' + contacts.email).btn morozov@fred.md
+				.header--btns: a(href='mailto:' + contacts.mail).btn= contacts.mail
 
 			.tiles
 				+tile (projects, '02', 'View projects')
