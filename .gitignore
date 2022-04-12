@@ -65,3 +65,9 @@ typings/
 
 # Serverless directories
 .serverless
+
+# Parcel cache
+.parcel-cache/
+
+# Parcel dist
+dist/

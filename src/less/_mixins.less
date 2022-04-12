@@ -63,32 +63,3 @@
 	bottom: auto;
 	left: @left;
 }
-
-.icon (@symbol) {
-	content: @symbol;
-
-	font-family: 'icomoon'!important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.cols (@t, @n, @i: 0) when (@i =< @n) {
-	.col-@{t}-@{i} {
-		float: left;
-		padding: 0 15px;
-
-		.size ((@i * 100% / @n));
-	}
-
-	.col-@{t}-offset-@{i} { margin-right: (@i * 100% / @n); }
-	.col-@{t}-offset-l-@{i} { margin-left: (@i * 100% / @n); }
-
-	.cols (@t, @n, (@i + 1));
-}

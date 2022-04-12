@@ -1,28 +1,18 @@
 // - Includes
-
 @import "_mixins.less";
 @import "_reset.less";
 
 
-
-
 // - Fonts
-
 @import (css) url(https://fonts.googleapis.com/css?family=Cuprum:400,700);
 
 
-
-
 // - Colors
-
 @white: #ffffff;
 @black: #000000;
 
 
-
-
 // - Breakpoints
-
 @screen-xs-max: 767px;
 
 @screen-sm-min: 768px;
@@ -31,10 +21,7 @@
 @sm-only: ~"(min-width: @{screen-sm-min})";
 
 
-
-
 // - Global
-
 html { min-width: auto;
 	.size (auto, 100%);
 }
@@ -55,28 +42,7 @@ body {
 	*, *:before, *:after { box-sizing: border-box; }
 }
 
-.left { float: left; }
-.right { float: right; }
-.clearfix { *zoom: 1;
-	&:after { clear: both; }
-	&:before, &:after { content: " ";
-		.display (table);
-	}
-}
-
-.row { margin: 0 -15px;
-	.clearfix ();
-}
-
-.cols (xs, 12);
-
-@media @sm-only { .cols (sm, 12); }
-
-
-
-
 // - Components
-
 .btn {
 	padding: 8px 18px;
 	text-align: center;
@@ -88,7 +54,6 @@ body {
 	box-shadow: 0 0 20px 0 fade(@black, 5);
 	border: 1px solid fade(@black, 10);
 
-	.display (inline-block);
 	.position (relative);
 	.font (18px, 20px, 400);
 
@@ -131,7 +96,6 @@ body {
 		transition: 300ms all ease;
 		border-right: 1px solid fade(@black, 10);
 
-		.display (inline-block);
 		.font (18px, 20px, 400);
 
 		&:hover { color: fade(@black, 40); }
@@ -149,10 +113,7 @@ body {
 }
 
 
-
-
 // - Blocks
-
 .page { padding: 0 30px 0 30px;
 	@media @xs-only {
 		padding: 0;
@@ -162,7 +123,6 @@ body {
 
 .header {
 	.position (relative);
-	.clearfix ();
 
 	@media @xs-only { padding: 0 0 40px; }
 
@@ -172,7 +132,6 @@ body {
 		padding: 35px 0 41px;
 
 		.font (36px, 44px);
-		.position (absolute, 0, 0, auto, 0);
 
 		@media @xs-only { padding: 30px 0 30px;
 			.position (relative);
@@ -200,14 +159,8 @@ body {
 
 		@media @xs-only {
 			padding: 0;
-			float: none!important;
 			text-align: center;
-
-			.btn-group { .display (inline-block); }
 		}
-
-		&:nth-child(2) { float: left; }
-		&:nth-child(3) { float: right; }
 	}
 }
 
@@ -217,7 +170,6 @@ body {
 	text-decoration: none;
 	transition: 300ms all ease;
 
-	.display (inline-block);
 	.position (relative);
 	.font (20px, 100px);
 
@@ -304,143 +256,4 @@ body {
 	.font (14px, 20px);
 
 	span { color: @white; }
-}
-
-
-
-
-// - Projects page
-
-.projects { .position (fixed, 0, 0, 0, 0); }
-.toolbox {
-	background: #262626;
-	z-index: 2;
-	box-shadow: 0 10px 20px 0 fade(@black, 20);
-
-	.position (relative);
-	.display (flex);
-	.size (auto, 70px);
-
-	@media @xs-only { padding: 0 0 0 70px;
-		.display (block);
-		.position (relative);
-		.size (auto, 81px);
-	}
-
-	&--back {
-		color: @white;
-		text-decoration: none;
-		padding: 20px 45px;
-		background: url(../icons/back.svg) 20px 29px no-repeat;
-		background-size: auto 10px;
-		transition: 300ms all ease;
-		border-right: 1px solid fade(@white, 10);
-
-		.display (block);
-		.font (18px, 30px);
-
-		@media @xs-only {
-			padding: 0;
-			background-position: center center;
-
-			.font (0);
-			.size (70px, 81px);
-			.position-tl (absolute, 0, 0);
-		}
-
-		&:hover { background-color: fade(@white, 10); }
-	}
-
-	&--in {
-		color: @white;
-		border-right: 1px solid fade(@white, 10);
-
-		.size (250px);
-
-		@media @xs-only {
-			border: none;
-			border-bottom: 1px solid fade(@white, 10);
-
-			.size (auto);
-			.clearfix ();
-
-			&:last-child { border: none; }
-		}
-
-		select {
-			appearance: none;
-			border: none;
-			background: url(../icons/down.svg) right center no-repeat;
-			background-size: auto 6px;
-			color: @white;
-			border-radius: 0;
-			padding: 11px 35px 9px 15px;
-			transition: 300ms all ease;
-			cursor: pointer;
-
-			.display (block);
-			.size (100%, 40px);
-			.font (15px, 20px);
-
-			@media @xs-only { float: left;
-				.size (~'calc(100% - 65px)', 40px);
-			}
-
-			&:hover { background-color: fade(@white, 10); }
-			option { color: @black;
-				.font (14px, 20px);
-			}
-		}
-	}
-
-	&--label {
-		padding: 6px 15px 3px;
-		border-bottom: 1px solid fade(@white, 10);
-
-		.font (14px, 20px);
-
-		@media @xs-only {
-			float: left;
-			border: none;
-			border-right: 1px solid fade(@white, 10);
-			padding: 6px 10px 4px;
-
-			.size (65px);
-			.font (14px, 30px);
-		}
-	}
-}
-
-.frame { z-index: 1;
-	.position (relative);
-	.size (auto, ~'calc(100% - 70px)');
-
-	@media @xs-only { .size (auto, ~'calc(100% - 81px)'); }
-
-	iframe {
-		.display (block);
-		.size (100%, 100%);
-	}
-}
-
-
-
-
-// - Responsive hacks
-
-.visible-xs,
-.visible-sm { .display (none); }
-
-@media @xs-only {
-	.visible-xs { .display (block); }
-	.visible-xs-ib { .display (inline-block); }
-
-	.hidden-xs { .display (none)!important; }
-}
-
-@media @sm-only {
-	.visible-sm { .display (block); }
-	.visible-sm-ib { .display (inline-block); }
-
-	.hidden-sm { .display (none)!important; }
 }
