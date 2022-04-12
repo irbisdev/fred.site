@@ -394,7 +394,7 @@
     "@parcel/utils" "2.4.1"
     posthtml "^0.16.4"
 
-"@parcel/plugin@2.4.1":
+"@parcel/plugin@*", "@parcel/plugin@2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@parcel/plugin/-/plugin-2.4.1.tgz#15294d796be2703b16fa4e617967cfaa8e5631d4"
   integrity sha512-EJzNhwNWYuSpIPRlG1U2hKcovq/RsVie4Os1z51/e2dcCto/uAoJOMoWYYsCxtjkJ7BjFYyQ7fcZRKM9DEr6gQ==
@@ -1330,6 +1330,12 @@ ordered-binary@^1.2.4:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/ordered-binary/-/ordered-binary-1.2.5.tgz#6208c45067eae9d14b8f44791a1d7037adad9147"
   integrity sha512-djRmZoEpOGvIRW7ufsCDHtvcUa18UC9TxnPbHhSVFZHsoyg0dtut1bWtBZ/fmxdPN62oWXrV6adM7NoWU+CneA==
+
+"parcel-transformer-meta-image@https://github.com/vijayhardaha/parcel-transformer-image-meta":
+  version "1.0.4"
+  resolved "https://github.com/vijayhardaha/parcel-transformer-image-meta#467928e78f0af108c724a81a1825bf308fc0f389"
+  dependencies:
+    "@parcel/plugin" "*"
 
 parcel@2.4.1:
   version "2.4.1"

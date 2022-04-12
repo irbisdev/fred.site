@@ -12,6 +12,7 @@
   "devDependencies": {
     "@parcel/transformer-less": "2.4.1",
     "@parcel/transformer-pug": "2.4.1",
-    "parcel": "2.4.1"
+    "parcel": "2.4.1",
+    "parcel-transformer-meta-image": "https://github.com/vijayhardaha/parcel-transformer-image-meta"
   }
 }
