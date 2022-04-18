@@ -23,6 +23,11 @@ jobs:
         uses: borales/actions-yarn@v2.3.0
         with:
           cmd: build
+      
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "dist/CNAME"
+          FILE_DATA: "fred.md"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
