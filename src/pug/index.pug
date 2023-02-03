@@ -47,13 +47,20 @@ html(lang="en")
 
 		.loader: .loader--spinner
 		.page
-				.bio #{name}#[span #{position} @ #[a(href=company.link)= company.name]]
+				.bio
+					.bio--photo
+					.bio--name= name
+					.bio--position #{position} @ #[a(href=company.link target="_blank")= company.name]
 
 				+btn-group ([
-          {url: 'https://github.com/' + contacts.github, caption: 'github'},
-          {url: 'https://t.me/' + contacts.telegram, caption: 'telegram'},
-          {url: 'mailto:' + contacts.mail, caption: contacts.mail}
-        ])
+					{url: 'https://github.com/' + contacts.github, caption: 'github'},
+					{url: 'https://t.me/' + contacts.telegram, caption: 'telegram'},
+					{url: 'https://linkedin.com/in/' + contacts.linkedin, caption: 'linkedin'},
+				])
+
+				+btn-group ([
+					{url: 'mailto:' + contacts.mail, caption: contacts.mail}
+				])
 
 		script.
 			function fadeOut(el) {

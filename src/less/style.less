@@ -9,11 +9,11 @@
 
 // - Colors
 @background-primary: #111214;
-@background-secondary: #242629;
-@background-secondary-hover: rgba(76, 80, 87, 0.24);
+@background-secondary: rgba(255, 255, 255, 0.03);
+@background-secondary-hover: rgba(255, 255, 255, 0.07);
 
 @foreground-primary: #FFFFFF;
-@foreground-secondary: #898B8F;
+@foreground-secondary: rgba(255, 255, 255, 0.5);
 
 
 // - Breakpoints
@@ -95,27 +95,42 @@ body {
 }
 
 .bio {
-  z-index: 1;
-  text-align: center;
-  padding: 0 0 25px;
+  padding: 0 0 34px;
+  flex-direction: column;
+  align-items: center;
 
-  .font (36px, 44px);
+  .display (flex);
 
-  span {
+  &--photo {
+    background: url(../assets/photo.jpg);
+    background-size: 100% 100%;
+    background-position: center center;
+    border-radius: 20px;
+    margin: 0 0 24px;
+
+    .size (100px, 100px);
+    .position (relative);
+  }
+
+  &--name {
+    .font (36px, 44px);
+  }
+
+  &--position {
     color: @foreground-secondary;
-    margin: 5px 0 0;
+    margin: 6px 0 0;
 
     .display (block);
     .font (18px, 20px);
-  }
 
-  a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: none;
+    a {
+      color: inherit;
+      font-weight: 700;
+      text-decoration: none;
 
-    &:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
