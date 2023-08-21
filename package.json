@@ -5,7 +5,7 @@
   "source": "src/pug/index.pug",
   "scripts": {
     "dev": "yarn clear && parcel",
-    "build": "yarn clear && parcel build --public-url ./",
+    "build": "export NODE_OPTIONS=--no-experimental-fetch && yarn clear && parcel build --public-url ./",
     "clear": "rm -rf dist/* && rm -rf .parcel-cache/*"
   },
   "dependencies": {},
