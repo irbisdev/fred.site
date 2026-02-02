@@ -50,7 +50,8 @@ html(lang="en")
 				.bio
 					.bio--photo
 					.bio--name= name
-					.bio--position #{position} @ #[a(href=company.link target="_blank")= company.name]
+					.bio--position #{position}
+					//- .bio--position #{position} @ #[a(href=company.link target="_blank")= company.name]
 
 				+btn-group ([
 					{url: 'https://github.com/' + contacts.github, caption: 'github'},

@@ -2,10 +2,6 @@
   "locals": {
     "name": "Fred Morozov 🔥",
     "position": "Frontend Developer",
-    "company": {
-      "name": "Samokat",
-      "link": "https://samokat.ru/"
-    },
     "contacts": {
       "mail": "morozov@fred.md",
       "twitter": "fredmorozov",
