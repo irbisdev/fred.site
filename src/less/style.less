@@ -2,19 +2,20 @@
 @import "_mixins.less";
 @import "_reset.less";
 
-
 // - Fonts
-@import (css) url(https://fonts.googleapis.com/css?family=Cuprum:400,700);
-
+@import (css)
+  url(https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&display=swap);
 
 // - Colors
-@background-primary: #111214;
-@background-secondary: rgba(255, 255, 255, 0.03);
-@background-secondary-hover: rgba(255, 255, 255, 0.07);
+@background-primary: #000000;
+@background-secondary: fade(#ffffff, 3);
+@background-secondary-hover: fade(#ffffff, 7);
 
-@foreground-primary: #FFFFFF;
-@foreground-secondary: rgba(255, 255, 255, 0.5);
+@foreground-primary: #ffffff;
+@foreground-secondary: fade(@foreground-primary, 60);
+@foreground-tertiary: fade(@foreground-primary, 40);
 
+@brand: #9ee009;
 
 // - Breakpoints
 @screen-xs-max: 767px;
@@ -24,7 +25,6 @@
 @xs-only: ~"(max-width: @{screen-xs-max})";
 @sm-only: ~"(min-width: @{screen-sm-min})";
 
-
 // - Global
 html {
   min-width: auto;
@@ -32,8 +32,18 @@ html {
 }
 
 body {
-  font: normal normal 14px/20px 'Cuprum', arial, sans-serif;
-  background: @background-primary;
+  font:
+    normal normal 14px/20px "Google Sans",
+    arial,
+    sans-serif;
+  background:
+    radial-gradient(
+        1024px 512px at 50% 0,
+        fade(@brand, 20) 0%,
+        @background-primary 100%
+      )
+      no-repeat,
+    @background-primary;
   color: @foreground-primary;
 
   -webkit-text-size-adjust: 100%;
@@ -48,7 +58,7 @@ body {
   button,
   select,
   option {
-    font-family: 'Cuprum', arial, sans-serif;
+    font-family: "Google Sans", arial, sans-serif;
   }
 
   *,
@@ -60,77 +70,143 @@ body {
 
 // - Components
 .btn {
-  padding: 12px 22px;
-  text-align: center;
+  padding: 0 16px;
   background: @background-secondary;
-  border-radius: 42px;
+  border-radius: 8px;
   color: @foreground-primary;
   text-decoration: none;
   transition: 150ms all ease;
-  margin: 10px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  overflow: hidden;
 
   .position (relative);
-  .font (18px, 20px, 400);
+  .font (16px, 20px, 600);
+  .display (flex);
+  .size (auto, 48px);
 
   &:hover {
     background: @background-secondary-hover;
+    color: @foreground-primary;
+    padding-right: 32px;
+
+    .icon {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &--preview {
+    color: @foreground-tertiary;
+
+    .font (14px, 20px, 600);
+  }
+
+  .icon {
+    opacity: 0;
+    transition: 150ms all ease;
+    color: @foreground-secondary;
+    transform: translate(100%, -50%);
+
+    .position (absolute, 50%, 8px);
+    .size (20px, 20px);
   }
 }
 
-.btn-group {
-  justify-content: center;
-  flex-wrap: wrap;
+.experience {
+  background: @background-secondary;
+  border-radius: 8px;
+  padding: 14px 20px;
 
-  .display (flex);
+  &--company {
+    .font (16px, 20px, 500);
+  }
 }
-
 
 // - Blocks
 .page {
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  padding: 128px 0;
+  gap: 128px;
 
   .display (flex);
-  .position (fixed, 0, 0, 0, 0);
 }
 
-.bio {
-  padding: 0 0 34px;
-  flex-direction: column;
+.intro {
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 32px;
 
   .display (flex);
 
   &--photo {
-    background: url(../assets/photo.jpg);
+    background: url(../assets/photo.png);
     background-size: 100% 100%;
     background-position: center center;
-    border-radius: 20px;
-    margin: 0 0 24px;
+    background-image: image-set(
+      url(../assets/photo.png) 1x,
+      url(../assets/photo@2x.png) 2x
+    );
+    corner-shape: squircle;
 
-    .size (100px, 100px);
+    .size (128px, 128px);
     .position (relative);
   }
 
   &--name {
-    .font (36px, 44px);
+    .font (32px, 48px, 500, Oswald);
   }
 
   &--position {
     color: @foreground-secondary;
-    margin: 6px 0 0;
 
     .display (block);
-    .font (18px, 20px);
+    .font (18px, 28px, 400, Oswald);
 
     a {
       color: inherit;
-      font-weight: 700;
+      font-weight: 600;
       text-decoration: none;
 
       &:hover {
         text-decoration: underline;
       }
     }
+  }
+}
+
+.content {
+  flex-direction: row;
+  max-width: 1024px;
+  padding: 0 16px;
+  gap: 32px;
+
+  .display(flex);
+  .size(100%);
+
+  &--sidebar {
+    gap: 16px;
+    flex-direction: column;
+
+    .display(flex);
+    .size(25%);
+  }
+
+  &--body {
+    flex: 1;
+    gap: 16px;
+    flex-direction: column;
+
+    .display(flex);
+  }
+
+  &--title {
+    padding: 0 16px;
+    color: @foreground-secondary;
+
+    .font (16px, 20px, 600);
   }
 }

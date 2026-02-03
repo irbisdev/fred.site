@@ -36,7 +36,16 @@ mixin head (pageTitle)
 
 		block
 
-mixin btn-group (items)
-	.btn-group
-		each item in items
-			a(href=item.url target="_blank" rel="noopener noreferrer").btn= item.caption
+mixin icon (name)
+	i(data-lucide= name).icon
+
+mixin btn (caption, url, preview)
+	a(href=url target="_blank" rel="noopener noreferrer").btn
+		span.btn--caption= caption
+		span.btn--preview= preview
+
+		+icon ('arrow-up-right')
+
+mixin experience (company)
+	.experience
+		.experience--company= company

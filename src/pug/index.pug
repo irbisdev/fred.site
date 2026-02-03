@@ -10,16 +10,16 @@ html(lang="en")
 				position: fixed;
 				top: 0; right: 0; bottom: 0; left: 0;
 				z-index: 5000;
-				background: #111214;
+				background: #000000;
 			}
 
 			.loader--spinner {
-				width: 50px; height: 50px;
-				background: #242629;
+				width: 64px; height: 64px;
+				background: rgba(158, 224, 9, 0.3);
 				position: absolute;
 				top: 50%; left: 50%;
-				margin: -25px 0 0 -25px;
-				border-radius: 25px;
+				margin: -32px 0 0 -32px;
+				border-radius: 32px;
 
 				-webkit-animation: spinner 1s infinite ease-in-out;
 				animation: spinner 1s infinite ease-in-out;
@@ -47,23 +47,34 @@ html(lang="en")
 
 		.loader: .loader--spinner
 		.page
-				.bio
-					.bio--photo
-					.bio--name= name
-					.bio--position #{position}
-					//- .bio--position #{position} @ #[a(href=company.link target="_blank")= company.name]
+				.intro
+					.intro--photo
+					.intro--bio
+						.intro--name= name
+						.intro--position= position
+						//- .intro--position #{position} @ #[a(href=company.link target="_blank")= company.name]
 
-				+btn-group ([
-					{url: 'https://github.com/' + contacts.github, caption: 'github'},
-					{url: 'https://t.me/' + contacts.telegram, caption: 'telegram'},
-					{url: 'https://linkedin.com/in/' + contacts.linkedin, caption: 'linkedin'},
-				])
+				.content
+					.content--sidebar
+						.content--title Contacts
 
-				+btn-group ([
-					{url: 'mailto:' + contacts.mail, caption: contacts.mail}
-				])
+						+btn('Mail', 'mailto:' + contacts.mail, contacts.mail)
+						+btn('Telegram', 'https://t.me/' + contacts.telegram, '@' + contacts.telegram)
+						+btn('GitHub', 'https://github.com/' + contacts.github, '@' + contacts.github)
+						+btn('LinkedIn', 'https://linkedin.com/in/' + contacts.linkedin, '@' + contacts.linkedin)
+						+btn('Instagram', 'https://instagram.com/' + contacts.instagram, '@' + contacts.instagram)
 
+					.content--body
+						.content--title Experience
+						
+						+experience('Samokat')
+						+experience('Openland')
+						+experience('Freelance')
+
+		script(src="https://unpkg.com/lucide@0.563.0/dist/umd/lucide.min.js")
 		script.
+			lucide.createIcons();
+
 			function fadeOut(el) {
 				el.style.opacity = 1;
 
