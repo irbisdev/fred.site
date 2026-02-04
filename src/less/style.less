@@ -107,7 +107,7 @@ body {
     opacity: 0;
     transition: 150ms all ease;
     color: @foreground-secondary;
-    transform: translate(100%, -50%);
+    transform: translate(50%, -50%);
 
     .position (absolute, 50%, 8px);
     .size (20px, 20px);
@@ -117,10 +117,26 @@ body {
 .experience {
   background: @background-secondary;
   border-radius: 8px;
-  padding: 14px 20px;
+  padding: 14px 16px;
+
+  &--info {
+    padding: 8px 0 16px 64px;
+  }
 
   &--company {
-    .font (16px, 20px, 500);
+    .font (16px, 24px, 600);
+  }
+
+  &--date {
+    color: @foreground-secondary;
+
+    .font (14px, 22px, 500);
+  }
+
+  &--summary {
+    color: @foreground-secondary;
+
+    .font (14px, 22px, 500);
   }
 }
 
@@ -128,7 +144,7 @@ body {
 .page {
   flex-direction: column;
   align-items: center;
-  padding: 128px 0;
+  padding: 128px 0 32px;
   gap: 128px;
 
   .display (flex);
@@ -150,7 +166,6 @@ body {
       url(../assets/photo.png) 1x,
       url(../assets/photo@2x.png) 2x
     );
-    corner-shape: squircle;
 
     .size (128px, 128px);
     .position (relative);
