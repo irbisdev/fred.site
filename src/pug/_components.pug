@@ -48,9 +48,12 @@ mixin btn (caption, url, preview)
 			path(d="M7 7h10v10")
 			path(d="M7 17 17 7")
 
-mixin experience (company, date, summary)
+mixin experience (company, date, location, summary, tags)
 	.experience
-		.experience--info
+		.experience--base
 			.experience--company= company
-			.experience--date= date
+			.experience--date= date + ' · ' + location
 		.experience--summary= summary
+		.experience--tags
+			each tag in tags
+				span= '#' + tag.toLowerCase().replace(' ', '_')

@@ -70,7 +70,7 @@ body {
 
 // - Components
 .btn {
-  padding: 0 16px;
+  padding: 0 20px;
   background: @background-secondary;
   border-radius: 8px;
   color: @foreground-primary;
@@ -117,14 +117,10 @@ body {
 .experience {
   background: @background-secondary;
   border-radius: 8px;
-  padding: 14px 16px;
-
-  &--info {
-    padding: 8px 0 16px 64px;
-  }
+  padding: 20px;
 
   &--company {
-    .font (16px, 24px, 600);
+    .font (16px, 28px, 600);
   }
 
   &--date {
@@ -133,10 +129,37 @@ body {
     .font (14px, 22px, 500);
   }
 
-  &--summary {
+  &--additional {
+    align-items: flex-end;
+    flex-direction: column;
+
+    .display (flex);
+  }
+
+  &--role {
+    .font (14px, 24px, 500);
+  }
+
+  &--location {
     color: @foreground-secondary;
 
     .font (14px, 22px, 500);
+  }
+
+  &--summary {
+    color: @foreground-tertiary;
+    padding: 4px 0;
+
+    .font (14px, 22px, 500);
+  }
+
+  &--tags {
+    color: @foreground-secondary;
+    gap: 0 8px;
+    flex-wrap: wrap;
+
+    .font (14px, 22px, 500);
+    .display (flex);
   }
 }
 
@@ -145,9 +168,14 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 128px 0 32px;
-  gap: 128px;
+  gap: 112px;
 
   .display (flex);
+
+  @media @xs-only {
+    padding: 64px 0 32px;
+    gap: 64px;
+  }
 }
 
 .intro {
@@ -157,6 +185,12 @@ body {
   gap: 32px;
 
   .display (flex);
+
+  @media @xs-only {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
 
   &--photo {
     background: url(../assets/photo.png);
@@ -197,10 +231,15 @@ body {
   flex-direction: row;
   max-width: 1024px;
   padding: 0 16px;
-  gap: 32px;
+  gap: 16px;
 
   .display(flex);
   .size(100%);
+
+  @media @xs-only {
+    flex-direction: column;
+    max-width: 500px;
+  }
 
   &--sidebar {
     gap: 16px;
@@ -208,6 +247,10 @@ body {
 
     .display(flex);
     .size(25%);
+
+    @media @xs-only {
+      .size (auto);
+    }
   }
 
   &--body {
@@ -219,7 +262,7 @@ body {
   }
 
   &--title {
-    padding: 0 16px;
+    padding: 16px 20px 0;
     color: @foreground-secondary;
 
     .font (16px, 20px, 600);
