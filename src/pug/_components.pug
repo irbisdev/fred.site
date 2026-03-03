@@ -56,4 +56,4 @@ mixin experience (company, date, location, summary, tags)
 		.experience--summary= summary
 		.experience--tags
 			each tag in tags
-				span= '#' + tag.toLowerCase().replace(' ', '_')
+				span= '#' + tag.toLowerCase().replace(/[ .]+/g, '_')
