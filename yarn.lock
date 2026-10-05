@@ -1699,9 +1699,9 @@ ordered-binary@^1.2.4:
   resolved "https://registry.yarnpkg.com/ordered-binary/-/ordered-binary-1.6.1.tgz#5ac240ea719d6a0e6d4f0485385d3f9cb1cd4432"
   integrity sha512-QkCdPooczexPLiXIrbVOPYkR3VO3T6v2OyKRkR1Xbhpy7/LAVXwahnRCgRp78Oe/Ehf0C/HATAxfSr6eA1oX+w==
 
-"parcel-transformer-meta-image@https://github.com/vijayhardaha/parcel-transformer-image-meta":
+"parcel-transformer-meta-image@https://github.com/irbisdev/parcel-transformer-image-meta":
   version "1.0.4"
-  resolved "https://github.com/vijayhardaha/parcel-transformer-image-meta#467928e78f0af108c724a81a1825bf308fc0f389"
+  resolved "https://github.com/irbisdev/parcel-transformer-image-meta#9b00e915d2a6448a007a475b0ed69553ccfb2cfd"
   dependencies:
     "@parcel/plugin" "*"
 
